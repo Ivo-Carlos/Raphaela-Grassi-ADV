@@ -1,0 +1,116 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-wine: var(--wine);
+  --color-copper: var(--copper);
+  --color-rose: var(--rose);
+  --color-cream: var(--cream);
+  --color-cream-foreground: var(--cream-foreground);
+  --color-surface-light: var(--surface-light);
+  --color-whatsapp: var(--whatsapp);
+  --color-accent-readable: var(--accent-readable);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  --ink: oklch(0.146982602 0.006768294 235.974122);
+  --wine: oklch(0.211842305 0.045004283 14.795615);
+  --copper: oklch(0.420741083 0.143906521 22.912298);
+  --rose: var(--copper);
+  --accent-readable: color-mix(in oklab, var(--copper) 65%, var(--cream));
+  --cream: oklch(1 0 0);
+  --cream-foreground: var(--ink);
+  --surface-light: oklch(0.97 0 0);
+  --whatsapp: #1fa855;
+  --background: var(--ink);
+  --foreground: var(--cream);
+  --card: oklch(0.205929957 0.005892258 285.870997);
+  --card-foreground: var(--cream);
+  --primary: var(--copper);
+  --primary-foreground: var(--cream);
+  --secondary: var(--card);
+  --secondary-foreground: var(--cream);
+  --muted: var(--card);
+  --muted-foreground: oklch(0.843696145 0.013534606 41.185754);
+  --accent: var(--copper);
+  --accent-foreground: var(--cream);
+  --border: color-mix(in oklab, var(--muted-foreground) 22%, transparent);
+  --input: color-mix(in oklab, var(--muted-foreground) 30%, transparent);
+  --ring: var(--rose);
+  --gradient-copper: linear-gradient(var(--copper), var(--copper));
+  --gradient-hero: radial-gradient(ellipse 70% 80% at 75% 40%, var(--wine) 0%, var(--ink) 75%);
+  --shadow-soft: 0 20px 50px -20px rgb(0 0 0 / 0.6);
+  --shadow-copper: 0 14px 34px -14px color-mix(in oklab, var(--copper) 70%, transparent);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  h1, h2, h3 { font-family: var(--font-display); }
+  .contact-target:focus-visible {
+    outline: 2px solid var(--accent-readable);
+    outline-offset: 4px;
+  }
+}
+
+@utility text-copper-gradient {
+  background: var(--gradient-copper);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility bg-copper-gradient { background: var(--gradient-copper); }
+@utility bg-hero { background: var(--gradient-hero); }
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-copper { box-shadow: var(--shadow-copper); }
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent-readable);
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  &.is-visible { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
