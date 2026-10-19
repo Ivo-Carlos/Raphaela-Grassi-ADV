@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import {
   Lock, Scale, MapPin, Gavel, Leaf, Landmark, ShieldAlert, Wallet, FileSearch, KeyRound, FileText, Phone, ChevronDown,
 } from "lucide-react";
-import logo from "@/assets/logo.webp.asset.json";
-import photo from "@/assets/home-raphaela.webp.asset.json";
-import aboutPhoto from "@/assets/about-raphaela.webp.asset.json";
+import logo from "@/assets/logo.webp";
+import photo from "@/assets/home-raphaela.webp";
+import aboutPhoto from "@/assets/about-raphaela.webp";
 import { ContactButton, ContactPair, WhatsAppIcon } from "@/components/site/ContactButtons";
 import { Section, SectionHeading } from "@/components/site/Section";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
