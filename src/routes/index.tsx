@@ -85,7 +85,7 @@ function Header() {
     <header className={`fixed inset-x-0 top-0 z-40 border-b border-rose/15 transition-all duration-300 ${scrolled ? "bg-ink/80 backdrop-blur-lg" : "bg-ink"}`}>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 md:h-20">
         <a href="#inicio" className="shrink-0" aria-label="Raphaela Grassi — início">
-          <img src={logo.url} alt="Raphaela Grassi Advocacia e Consultoria" width={800} height={173} className="h-9 w-auto md:h-11" />
+          <img src={logo} alt="Raphaela Grassi Advocacia e Consultoria" width={800} height={173} className="h-9 w-auto md:h-11" />
         </a>
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground lg:flex">
           <a href="#atuacao" className="transition-colors hover:text-rose">Atuação</a>
@@ -132,7 +132,7 @@ function Hero() {
         <div className="relative mx-auto hidden w-full max-w-md lg:block">
           <div className="absolute inset-x-6 bottom-0 top-16 rounded-t-full border border-rose/25" />
           <img
-            src={photo.url}
+            src={photo}
             alt="Dra. Raphaela Grassi, advogada criminalista em Campo Grande/MS"
             width={585} height={942}
             fetchPriority="high"
@@ -210,7 +210,7 @@ function About() {
       <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="reveal relative mx-auto w-full max-w-sm">
           <div className="absolute -inset-3 translate-x-4 translate-y-4 rounded-lg border border-rose/30" />
-          <img src={aboutPhoto.url} alt="Retrato da Dra. Raphaela Grassi, OAB/MS 31.969" loading="lazy" width={832} height={1248} className="relative aspect-[4/5] w-full rounded-lg object-cover object-top shadow-soft" />
+          <img src={aboutPhoto} alt="Retrato da Dra. Raphaela Grassi, OAB/MS 31.969" loading="lazy" width={832} height={1248} className="relative aspect-[4/5] w-full rounded-lg object-cover object-top shadow-soft" />
         </div>
         <div className="reveal">
           <p className="eyebrow mb-4">Sobre a advogada</p>
@@ -279,7 +279,7 @@ function Footer() {
     <footer className="border-t border-rose/15 bg-ink px-5 pb-28 pt-14 sm:px-8 md:pb-14">
       <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
         <div>
-          <img src={logo.url} alt="Raphaela Grassi Advocacia e Consultoria" loading="lazy" width={800} height={173} className="h-10 w-auto" />
+          <img src={logo} alt="Raphaela Grassi Advocacia e Consultoria" loading="lazy" width={800} height={173} className="h-10 w-auto" />
           <p className="mt-4 text-sm text-muted-foreground">Raphaela Grassi — Advocacia e Consultoria<br />OAB/MS 31.969 · Campo Grande/MS</p>
         </div>
         <div className="text-sm">

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Play } from "lucide-react";
-import photo from "@/assets/home-raphaela.webp.asset.json";
+const photo = "/home-raphaela.webp";
 import { VIDEO_CAPTIONS_URL, VIDEO_URL, YOUTUBE_VIDEO_ID } from "@/config/contact";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/tracking";
@@ -47,7 +47,7 @@ export function VideoPlayer() {
           className="group absolute inset-0 block h-full w-full rounded-none p-0 hover:bg-transparent"
           aria-label="Reproduzir vídeo da Dra. Raphaela Grassi sobre prisão em flagrante"
         >
-          <img src={photo.url} alt="Dra. Raphaela Grassi, advogada criminalista em Campo Grande/MS" loading="lazy" width={585} height={942} className="h-full w-full object-cover object-top opacity-80 transition-transform duration-700 group-hover:scale-105" />
+          <img src={photo} alt="Dra. Raphaela Grassi, advogada criminalista em Campo Grande/MS" loading="lazy" width={585} height={942} className="h-full w-full object-cover object-top opacity-80 transition-transform duration-700 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
           <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-copper-gradient text-primary-foreground shadow-copper transition-transform group-hover:scale-110">
             <Play className="ml-1 h-8 w-8" fill="currentColor" />
